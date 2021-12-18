@@ -48,6 +48,7 @@
             android:onClick="next"/>
     </RelativeLayout>
     <TextView
+        android:id="@+id/ktory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Który obraz wyświetlać?"/>
@@ -57,7 +58,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:onClick="wybor"
         android:imeOptions="actionDone"/>
 
     <Switch
@@ -78,6 +78,3 @@
     </RelativeLayout>
 
 </LinearLayout>
-    <!--android:background="#00796B"
-        android:background="#004C40"
-        android:background="#1565c0"-->

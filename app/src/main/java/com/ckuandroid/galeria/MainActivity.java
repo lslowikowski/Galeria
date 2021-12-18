@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -21,6 +23,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        EditText wybor = (EditText) findViewById(R.id.wybor);
+        wybor.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                TextView ktory = (TextView) findViewById(R.id.ktory);
+                String numerStr = editable.toString();
+                if(numerStr.length()>0){
+                    int numer = Integer.parseInt(numerStr);
+                    ustawKota(numer);
+                }
+            }
+        });
     }
 
     public void prev(View view) {
@@ -52,19 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 kotek.setImageResource(R.drawable.kot4);
                 break;
             default:
-                kotek.setImageResource(R.drawable.kot1);
+//                kotek.setImageResource(R.drawable.kot1);
         }
     }
 
-    public void wybor(View view) {
-        //EditText wybor = (EditText) findViewById(R.id.wybor);
-        EditText wybor = (EditText) view;
-        String wyborStr = wybor.getText().toString();
-        if(wyborStr.length()>0) {
-            int wyborInt = Integer.parseInt(wyborStr);
-            if (wyborInt > 0 && wyborInt < 5) ustawKota(wyborInt);
-        }
-    }
 
     @SuppressLint("ResourceAsColor")
     public void zmienTlo(View view) {
