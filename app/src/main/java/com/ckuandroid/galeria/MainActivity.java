@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         EditText wybor = (EditText) findViewById(R.id.wybor);
         wybor.addTextChangedListener(new TextWatcher() {
-
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -38,11 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                TextView ktory = (TextView) findViewById(R.id.ktory);
                 String numerStr = editable.toString();
-                if(numerStr.length()>0){
-                    int numer = Integer.parseInt(numerStr);
-                    ustawKota(numer);
+                if(numerStr.length()>0) {
+                    int numerInt = Integer.parseInt(numerStr);
+                    ustawKota(numerInt);
                 }
             }
         });
