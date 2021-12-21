@@ -10,10 +10,15 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,6 +49,70 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        SeekBar seekBar2 = (SeekBar) findViewById(R.id.seekBar2);
+        seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+               Integer postep = seekBar.getProgress();
+               ustawKota(postep);
+            }
+        });
+
+        RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                float ocena = ratingBar.getRating();
+                int ocenaInt = (int) ocena;
+                ustawKota(ocenaInt);
+            }
+        });
+
+
+        RadioButton radioButton1 = (RadioButton) findViewById(R.id.radioButton1);
+        RadioButton radioButton2 = (RadioButton) findViewById(R.id.radioButton2);
+        RadioButton radioButton3 = (RadioButton) findViewById(R.id.radioButton3);
+        RadioButton radioButton4 = (RadioButton) findViewById(R.id.radioButton4);
+
+        radioButton1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                ustawKota(1);
+            }
+        });
+
+        radioButton2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                ustawKota(2);
+            }
+        });
+
+        radioButton3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                ustawKota(3);
+            }
+        });
+
+        radioButton4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                ustawKota(4);
+            }
+        });
+
+
     }
 
     public void prev(View view) {

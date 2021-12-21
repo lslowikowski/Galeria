@@ -1,80 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/glowne"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:background="#00796B">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tytul"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/glowne"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Galeria"
-        android:textSize="38sp"
-        android:textColor="#FFFFFF"
-        android:background="#00796B"/>
+        android:layout_height="match_parent"
+        android:background="#00796B"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/kotek"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        android:src="@drawable/kot1" />
-    <RelativeLayout
-        android:id="@+id/przyciski"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#00796B">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Prev"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:backgroundTint="#004C40"
-            android:onClick="prev"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:backgroundTint="#004C40"
-            android:onClick="next"/>
-    </RelativeLayout>
-    <TextView
-        android:id="@+id/ktory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Który obraz wyświetlać?"/>
-
-    <EditText
-        android:id="@+id/wybor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:imeOptions="actionDone"/>
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tło niebieskie?  "
-        android:onClick="zmienTlo"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
         <TextView
+            android:id="@+id/tytul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:text="Autor: 00123456789"
-            android:background="#004C40"/>
-    </RelativeLayout>
+            android:background="#00796B"
+            android:text="Galeria"
+            android:textColor="#FFFFFF"
+            android:textSize="38sp" />
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/kotek"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/kot1" />
+
+        <RelativeLayout
+            android:id="@+id/przyciski"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00796B">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:backgroundTint="#004C40"
+                android:onClick="prev"
+                android:text="Prev" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="#004C40"
+                android:onClick="next"
+                android:text="Next" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ktory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Który obraz wyświetlać?" />
+
+        <EditText
+            android:id="@+id/wybor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="number" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="zmienTlo"
+            android:text="Tło niebieskie?  " />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="4"
+            android:min="1"
+            android:progress="2" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="4"
+            android:rating="1"
+            android:stepSize="1" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kotek 1" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kotek 2" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kotek 3" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kotek 4" />
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#004C40"
+                android:text="Autor: 00123456789" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
